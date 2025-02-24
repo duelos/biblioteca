@@ -27,6 +27,21 @@ public class Biblioteca implements Notificavel {
         acervo.add(livro);
     }
 
+    public void editarLivro(String titulo, String novoTitulo, String novoAutor, int novoAnoPublicacao, String novoIsbn) throws LivroNaoEncontradoException {
+        Livro livro = buscarLivroPorTitulo(titulo);
+        livro.setTitulo(novoTitulo);
+        livro.setAutor(novoAutor);
+        livro.setAnoPublicacao(novoAnoPublicacao);
+        livro.setIsbn(novoIsbn);
+        System.out.println("Livro editado com sucesso!");
+    }
+
+    public void removerLivro(String titulo) throws LivroNaoEncontradoException {
+        Livro livro = buscarLivroPorTitulo(titulo);
+        acervo.remove(livro);
+        System.out.println("Livro removido com sucesso!");
+    }
+
     public void adicionarUsuario(Usuario usuario) {
         usuarios.add(usuario);
     }
@@ -65,6 +80,16 @@ public class Biblioteca implements Notificavel {
         if (LocalDate.now().isAfter(emprestimo.getDataDevolucao())) {
             System.out.println("Notificação de atraso para o usuário: " + emprestimo.getUsuario().getNome());
         }
+    }
+
+    public void removerUsuario(String nome) throws Exception {
+        Usuario usuario = buscarUsuarioPorNome(nome);
+        usuarios.remove(usuario);
+        System.out.println("Usuário removido com sucesso!");
+    }
+
+    public Usuario consultarUsuario(String nome) throws Exception {
+        return buscarUsuarioPorNome(nome);
     }
 
     public List<Livro> consultarLivrosDisponiveis() {
@@ -135,5 +160,7 @@ public class Biblioteca implements Notificavel {
         public List<Emprestimo> getEmprestimos() {
         return emprestimos;
         }
+
+
     }
 

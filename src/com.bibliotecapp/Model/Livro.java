@@ -12,6 +12,23 @@ public class Livro extends ItemBiblioteca {
         return isbn;
     }
 
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    // Setters para os atributos herdados de ItemBiblioteca
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public void setAnoPublicacao(int anoPublicacao) {
+        this.anoPublicacao = anoPublicacao;
+    }
+
     @Override
     public String getTipo() {
         return "Livro";

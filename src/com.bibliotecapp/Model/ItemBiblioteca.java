@@ -1,9 +1,9 @@
 package com.bibliotecapp.Model;
 
 public abstract class ItemBiblioteca {
-    private String titulo;
-    private String autor;
-    private int anoPublicacao;
+    protected String titulo;
+    protected String autor;
+    protected int anoPublicacao;
 
     public ItemBiblioteca(String titulo, String autor, int anoPublicacao) {
         this.titulo = titulo;
