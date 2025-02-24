@@ -16,7 +16,6 @@ public class Livro extends ItemBiblioteca {
         this.isbn = isbn;
     }
 
-    // Setters para os atributos herdados de ItemBiblioteca
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }

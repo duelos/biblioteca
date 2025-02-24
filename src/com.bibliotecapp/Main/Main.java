@@ -93,7 +93,6 @@ public class Main {
         } while (opcao != 0);
     }
 
-    // Submenu para Usuários
     private static void menuUsuarios(Biblioteca biblioteca, Scanner scanner) {
         int opcao;
 
@@ -126,7 +125,6 @@ public class Main {
         } while (opcao != 0);
     }
 
-    // Submenu para Empréstimos
     private static void menuEmprestimos(Biblioteca biblioteca, Scanner scanner) {
         int opcao;
 
@@ -161,7 +159,6 @@ public class Main {
             }
         } while (opcao != 0);
     }
-
 
 
     private static void cadastrarLivro(Biblioteca biblioteca, Scanner scanner) {
